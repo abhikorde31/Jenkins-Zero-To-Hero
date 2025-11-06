@@ -2,6 +2,9 @@
 # But make sure to use the correct version of Java
 FROM adoptopenjdk/openjdk11:alpine-jre
 
+# Install Maven
+RUN apk add --no-cache maven
+
 # Simply the artifact path
 ARG artifact=target/spring-boot-web.jar
 
