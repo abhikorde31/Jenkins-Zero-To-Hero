@@ -12,5 +12,5 @@ WORKDIR /opt/app
 
 COPY ${artifact} app.jar
 
-# This should not be changed
-ENTRYPOINT ["java","-jar","app.jar"]
+# ✅ Keep container running after app starts (important for Jenkins)
+CMD ["sh", "-c", "java -jar app.jar & tail -f /dev/null"]
